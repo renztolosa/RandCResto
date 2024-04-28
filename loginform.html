@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon"type="image/x-icon"href="pictures/logu.JPG">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  h2{
+    font-family: arial;
+  }
+  form {
+    width: 20%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffccb3;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  input[type="submit"]{
+    background-color: #ffaa80;
+    color: white;
+    cursor: pointer;
+  }
+
+
+</style>
+<script>
+    function validateLogin() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Add your authentication logic here
+      if (username === "renztolosa"&& password === "123") {
+        window.location.href = "Mywebsite.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+</script>
+</head>
+<body>
+
+<form onsubmit="event.preventDefault(); validateLogin()">
+<center><img src="Super.png" id="logu" style="position:relative; left: -40px;" width = 380 height = 200></center>
+
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required><br>
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required><br>
+
+<input type="submit" value="Login">
+<input type="button" value="Reset" onclick = "resetForm()">
+</form>
+
+</body>
+</html>
